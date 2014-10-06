@@ -1,0 +1,5 @@
+<ul>
+  <%@videos.each do |video|%>
+    <li><%=link_to video.title, video.url%> by <%=video.author.name%></li>
+  <%end%>
+</ul>

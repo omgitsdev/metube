@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/videos' => 'videos#index'
-  get '/videos/:id' => 'videos#show'
+  resources :videos
 
   root 'videos#index'
 

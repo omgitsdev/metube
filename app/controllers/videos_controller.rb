@@ -27,14 +27,26 @@ class VideosController < ApplicationController
 
   #edit video form - GET /videos/:id/edit
   def edit
+    @video = Video.find(params[:id])
   end
 
   #update an existing video - PUT /videos/:id
   def update
+    @video = Video.find(params[:id])
+
+    if @video.update(video_params)
+      redirect_to @video
+    else
+      render :edit
+    end
   end
 
   #destroy an existing video - DELETE /videos/:id
   def destroy
+    Video.find(params[:id]).delete
+    @videos = Video.all
+
+    redirect_to '/'
   end
 
   private

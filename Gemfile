@@ -40,3 +40,5 @@ gem 'spring',        group: :development
 
 gem 'rspec-rails'
 gem 'pry-byebug'
+gem 'foundation-rails'
+

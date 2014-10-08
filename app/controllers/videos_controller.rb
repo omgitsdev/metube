@@ -1,5 +1,4 @@
 class VideosController < ApplicationController
-  before_action :authenticate_user!
   #list all videos - GET /videos
   def index
     @videos = Video.all

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :videos
+  get '/users/:id' => 'users#show', as: :user
 
   root 'videos#index'
 

@@ -1,0 +1,26 @@
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><%=link_to 'Metube', root_path%></h1>
+    </li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <%if user_signed_in?%>
+        <li><%= link_to "log out", destroy_user_session_path, method: :delete %></li>
+      <%else%>
+        <li><%=link_to 'sign in', '/users/sign_in'%></li>
+        <li><%=link_to 'sign up', '/users/sign_up'%></li>
+      <%end%>
+    </ul>
+
+    <!-- Left Nav Section -->
+    <% if user_signed_in? %>
+      <ul class="left">
+        <li><a href="#"><%=link_to current_user.name, current_user%></a></li>
+      </ul>
+    <% end %>
+  </section>
+</nav>

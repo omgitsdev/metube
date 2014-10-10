@@ -1,5 +1,7 @@
 <h1><%=@video.title%></h1>
 <h2>by <%=@video.author.name%></h2>
 <p><%=link_to 'watch', @video.url%></p>
-<p><%=link_to 'edit', '/videos/'+@video.id.to_s+'/edit'%></p>
-<p><%=link_to 'delete', '/videos/'+@video.id.to_s, method: :delete%></p>
+<%if current_user == @video.author%>
+  <p><%=link_to 'edit', '/videos/'+@video.id.to_s+'/edit'%> |
+  <%=link_to 'delete', '/videos/'+@video.id.to_s, method: :delete%></p>
+<%end%>

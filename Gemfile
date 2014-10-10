@@ -42,4 +42,5 @@ gem 'rspec-rails'
 gem 'pry-byebug'
 gem 'foundation-rails'
 gem 'devise'
+gem 'figaro'
 

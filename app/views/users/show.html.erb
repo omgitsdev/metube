@@ -1,0 +1,9 @@
+<h1><%=@user.name%></h1>
+<h3>All videos:</h3>
+<%@user.videos.each do |video|%>
+  <%=link_to video.title, video%>
+  <%if @user == current_user%>
+   | <%=link_to 'edit', video%> | <%=link_to 'delete', video, method: :delete%>
+  <%end%>
+  <br>
+<%end%>
